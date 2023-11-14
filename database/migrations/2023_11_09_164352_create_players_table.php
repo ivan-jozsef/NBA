@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("name",25);
             $table->integer("age");
-            $table->float("height")->default(2);
+            $table->float("height")->default(200);
             $table->string("team",5);
             $table->timestamps();
         });

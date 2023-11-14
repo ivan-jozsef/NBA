@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('players', function (Blueprint $table) {
-            $table->unsignedBigInteger('')
+
+            $table->foreign('team')->references('team')->on('teams');
+
+
         });
     }
 
@@ -21,6 +24,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('players', function (Blueprint $table) {
+            $table->dropForeign(['team']);
+        });
+
+        Schema::dropIfExists('players');
     }
 };
