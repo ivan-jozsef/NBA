@@ -25,5 +25,9 @@ class TeamSeeder extends Seeder
             'team'=>'MIN',
             'full_name'=>'Minnesota Timberwolves',
         ]);
+        DB::table("teams")->insert([
+            'team'=>'MIA',
+            'full_name'=>'Miami Heat',
+        ]);
     }
 }
